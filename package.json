@@ -2,16 +2,19 @@
   "name": "http-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "commonjs",
   "scripts": {
     "test": "jest --verbose --runInBand --testLocationInResults",
     "test:watch": "npm run test -- --watch",
-    "start": "node index.js",
-    "start:watch": "nodemon index.js"
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "watchPathIgnorePatterns": [
+      "store"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -26,6 +29,7 @@
     "prettier": "^2.4.1"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "shortid": "^2.2.16"
   }
 }
