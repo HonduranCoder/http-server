@@ -1,4 +1,4 @@
-onst EventEmitter = require('events');
+const EventEmitter = require('events');
 const parseBody = require('../lib/parse-body.js');
 
 it('returns null if method is not POST, PUT, or PATCH', async () => {
@@ -18,7 +18,7 @@ it('throws if content-type is not application/json', async () => {
   try {
     await parseBody(req);
   } catch (e) {
-    expect(e).toEqual('Content-Type must be application/json');
+    expect(e).toEqual('content-type must be application/json');
   }
 });
 
